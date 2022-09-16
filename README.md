@@ -1,4 +1,6 @@
 # Linux-dev
 Commands to build the code:
-  cd Linux_dev/
+
+  cd Linux_dev
+  
   gcc main.c myFemtoShell.c
