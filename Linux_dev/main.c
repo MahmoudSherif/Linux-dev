@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "myFemtoShell.h"
 
 int main()
