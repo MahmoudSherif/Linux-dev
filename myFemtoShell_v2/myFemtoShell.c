@@ -33,7 +33,6 @@ void myFemtoShell()
       }
       else
       {
-        printf("ff");
         printf("You Said: ");
         fputs(str, stdout);
         printf("\n");
