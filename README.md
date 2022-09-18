@@ -1,6 +1,16 @@
 # Linux-dev
-Commands to build the code:
+Commands to build and run version1:
 
-  cd Linux_dev
+  cd myFemtoShell_v1
   
-  gcc main.c myFemtoShell.c
+  gcc *.c -o myFemtoShell
+
+  ./myFemtoShell
+
+Commands to build and run version2:
+
+  cd myFemtoShell_v2 
+  
+  gcc *.c -o myFemtoShell
+
+  ./myFemtoShell
