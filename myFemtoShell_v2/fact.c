@@ -9,9 +9,9 @@ void fact(void)
     unsigned char dummy;
     fputs("Enter a number\n", stdout);
     scanf("%d", &num);
-    fflush(stdin);
-#if 0
     scanf("%c", &dummy);
+#if 0
+    fflush(stdin);
 #endif
     for (i = num; i > 0; i--)
     {
