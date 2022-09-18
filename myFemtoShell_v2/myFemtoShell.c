@@ -3,12 +3,15 @@
 #include "myFemtoShell.h"
 #include "rand.h"
 #include "fact.h"
+#include "fib.h"
 
 void myFemtoShell()
 {
   const char exitString[] = "exit";
   const char randString[] = "rand";
   const char factString[] = "fact";
+  const char fibString[] = "fib";
+
   const char promptString[] = "say any thing > ";
   char str[MAX];
   unsigned char exitFlag = 0;
@@ -30,6 +33,10 @@ void myFemtoShell()
       else if (strcasecmp(factString, str) == 0)
       {
         fact();
+      }
+      else if (strcasecmp(fibString, str) == 0)
+      {
+        fib();
       }
       else
       {
