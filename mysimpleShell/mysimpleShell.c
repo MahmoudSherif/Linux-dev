@@ -16,7 +16,7 @@ int main(int argc, char** argv )
         char* myargv[10];
         char* myargc[10];
 
-        fputs("ana gahez ya basha >\n",stdout);
+        fputs("ana gahez ya basha >",stdout);
         fgets(buf,100,stdin);
         
         int len = strlen(buf);
@@ -55,12 +55,12 @@ int main(int argc, char** argv )
 
         }else if (ret_pid > 0)
         {
-            printf("this is the parent and my pid is %d and my child pid is %d\n",getpid(),ret_pid);
+            // printf("this is the parent and my pid is %d and my child pid is %d\n",getpid(),ret_pid);
             int status;
             wait(&status);
         }else if (ret_pid == 0)
         {
-	    printf("The is the child - my id id %d and my parent id is %d\n",getpid(),getppid());
+	    // printf("The is the child - my id id %d and my parent id is %d\n",getpid(),getppid());
 
             sleep(1);
 
