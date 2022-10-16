@@ -12,7 +12,7 @@ int main(int argc, char** argv )
     while (1)
     {
         char buf[100];
-        char args[10][10]; 
+        char args[100][100]; 
         char* myargv[10];
         char* myargc[10];
 
@@ -23,20 +23,23 @@ int main(int argc, char** argv )
 
         buf[len -1 ] = 0;
         int i=0,j=0,k=0;
+        char lastChar = ' ';
 
         for(;i<len;i++)
         {
-            if(buf[i]==' ')
+            if(buf[i]!=' ')
             {
-                args[j][k]=0;
-                myargv[j] = args[j];
-                j++;
-                k=0;
-            }else
-            {
+                if (lastChar == ' ' && k!=0)
+                {
+                    args[j][k]=0;
+                    myargv[j] = args[j];
+                    j++;
+                    k=0;
+                }
                 args[j][k]=buf[i];
                 k++;
             }
+            lastChar = buf[i];
         }
         args[j][k]=0;
         myargv[j] = args[j];
