@@ -6,12 +6,7 @@
 #include <stdlib.h>
 
 int main(int argc, char** argv )
-{
-
-    int my_pid = getpid();
-    printf("my pid is %d\n",my_pid);
-
-    
+{    
     char localVarStr[10][10]={0};
     int lv_counter =0;
     
