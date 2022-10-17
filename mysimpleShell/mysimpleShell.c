@@ -3,12 +3,20 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/wait.h>
+#include <stdlib.h>
 
 int main(int argc, char** argv )
 {
 
     int my_pid = getpid();
     printf("my pid is %d\n",my_pid);
+
+    
+    char localVarStr[10][10]={0};
+    int lv_counter =0;
+    
+    char local_vars[10][10];
+    char local_vars_values[10][10];
     while (1)
     {
         char buf[100];
@@ -66,15 +74,32 @@ int main(int argc, char** argv )
             myargv[j] = 0;
 
 
+
             if(strcasecmp(myargv[0],"set")== 0)
             {
                 /* display local variables */
+                for(int i=0;i<lv_counter;i++)
+                {
+                    printf("Local_variable[%d] %s\n",i,localVarStr[i]);
+                }
             }else if (strcasecmp(myargv[0],"export")== 0)
             {
                 /* adding the local variable to the environment */
+                for(int i=0;i<lv_counter;i++)
+                {
+                    if (strcasecmp(myargv[1],local_vars[i])==0)
+                    {
+                        setenv(local_vars[i],local_vars_values[i],1);
+                    }
+                }
             }else if(lVar_flag==1)
             {
-                
+                strcpy(local_vars[lv_counter],myargv[0]);
+                strcpy(local_vars_values[lv_counter],myargv[1]);
+
+                // printf("local var %s is %s",local_vars[lv_counter],local_vars_values[lv_counter]);
+                strcpy(localVarStr[lv_counter],buf);
+                lv_counter ++;
                 /* add a local variable to the list */
             }else 
             {
